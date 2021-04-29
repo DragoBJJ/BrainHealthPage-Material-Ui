@@ -16,16 +16,12 @@ const HealthCard = ({ title, srcImage, description }) => {
 
   return (
     <Grid item>
-      <Card className={cardHealth} style={{ textAlign: "center" }}>
+      <Card className={cardHealth}>
         <CardHeader title={title} />
         <CardActionArea style={{ height: "100%" }}>
           <CardMedia className={cardMedia} image={srcImage} />
           <CardContent className={cardContent}>
-            <Typography
-              variant="body1"
-              paragraph
-              style={{ marginTop: "150px" }}
-            >
+            <Typography variant="body1" paragraph>
               {description}
             </Typography>
           </CardContent>

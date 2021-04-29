@@ -8,7 +8,7 @@ import { AppBar, Toolbar, Button } from "@material-ui/core";
 import { BiBrain } from "react-icons/bi";
 import useStyles from "./style";
 
-import { scrollToUp, updateScroll } from "./utils";
+import { scrollToUp, updateScroll, FadeMenu } from "./utils";
 
 const Nagivation = () => {
   const { navBarLogo, toolBar, appBar, iconScrollUp, button } = useStyles();
@@ -25,9 +25,10 @@ const Nagivation = () => {
   return (
     <AppBar
       position="fixed"
-      style={{ opacity: `${isVisibleNavbar ? "0.8" : "1"}` }}
+      style={{ opacity: `${isVisibleNavbar ? "0.9" : "1"}` }}
       className={appBar}
     >
+      <FadeMenu />
       <Toolbar className={toolBar}>
         <BiBrain className={navBarLogo} />
         <Button
@@ -54,11 +55,11 @@ const Nagivation = () => {
           offset={-80}
           activeClass="active"
         >
-          BrainHealth
+          Health
         </Button>
         <Button
-          className={button}
           component={Link}
+          className={button}
           color="inherit"
           to="Mentors"
           duration={500}

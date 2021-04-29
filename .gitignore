@@ -4,7 +4,7 @@
 .firebaserc
 firebase.json
 
-# dependencies
+# dependenciesc
 /node_modules
 /.pnp
 .pnp.js

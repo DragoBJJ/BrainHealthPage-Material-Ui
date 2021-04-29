@@ -12,19 +12,24 @@ import {
 import useStyles from "./style";
 
 const Article = ({ title, description, link, image, imageFirst }) => {
+  const props = {
+    flexDirection: `${imageFirst ? "row" : "row-reverse"}`
+  };
+
   const {
     card,
     cardImage,
     cardDetails,
     linkContainer,
-    avatarLink
-  } = useStyles();
+    avatarLink,
+    Title,
+    Description
+  } = useStyles(props);
   return (
     <Grid item>
       <Card className={card}>
-        {imageFirst && (
-          <CardMedia className={cardImage} image={image} title={title} />
-        )}
+        <CardMedia className={cardImage} image={image} title={title} />
+
         <div className={cardDetails}>
           <CardContent>
             <div className={linkContainer}>
@@ -39,17 +44,14 @@ const Article = ({ title, description, link, image, imageFirst }) => {
               </Link>
             </div>
 
-            <Typography variant="h4" gutterBottom>
+            <Typography className={Title} variant="h4" gutterBottom>
               {title}
             </Typography>
-            <Typography variant="h6" gutterBottom>
+            <Typography className={Description} variant="h6" gutterBottom>
               {description}
             </Typography>
           </CardContent>
         </div>
-        {!imageFirst && (
-          <CardMedia className={cardImage} image={image} title={title} />
-        )}
       </Card>
     </Grid>
   );

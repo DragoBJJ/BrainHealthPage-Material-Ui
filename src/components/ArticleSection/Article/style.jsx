@@ -1,17 +1,18 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles(({ breakpoints, spacing, palette }) => ({
-  card: {
+  card: ({ flexDirection }) => ({
     display: "flex",
     height: "700px",
     justifyContent: "space-around",
-    padding: spacing(6),
+    flexDirection: flexDirection,
+    padding: spacing(2),
     backgroundColor: "#fffdd0",
     [breakpoints.down("sm")]: {
       flexDirection: "column",
       height: "auto"
     }
-  },
+  }),
   cardDetails: {
     flex: 0.7,
     textAlign: "center"
@@ -23,7 +24,26 @@ export default makeStyles(({ breakpoints, spacing, palette }) => ({
     [breakpoints.down("sm")]: {
       margin: "auto",
       width: "250px",
-      height: "250px"
+      height: "250px",
+      order: "1"
+    },
+    [breakpoints.down("xs")]: {
+      margin: "auto",
+      width: "200px",
+      height: "200px",
+      order: "1"
+    }
+  },
+  Title: {
+    [breakpoints.down("xs")]: {
+      fontSize: "28px",
+      marginBottom: "40px"
+    }
+  },
+  Description: {
+    [breakpoints.down("xs")]: {
+      fontSize: "20px",
+      fontWeight: "400"
     }
   },
   linkContainer: {

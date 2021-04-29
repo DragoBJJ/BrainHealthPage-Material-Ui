@@ -10,7 +10,7 @@ const HeroSection = () => {
     <Paper className={MainPost}>
       <Grid container justify="center">
         <Grid className={PostContent} item md={8}>
-          <Typography align="center" variant="h2" gutterBottom>
+          <Typography align="center" component="h2" variant="h2" gutterBottom>
             Your Brain can be better...
           </Typography>
           <Typography align="center" component="q" variant="h4" paragraph>

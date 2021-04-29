@@ -20,6 +20,15 @@ export default makeStyles(theme => ({
     [theme.breakpoints.up("md")]: {
       padding: theme.spacing(6),
       paddingRight: 0
+    },
+    [theme.breakpoints.down("xs")]: {
+      paddingTop: theme.spacing(10),
+      "& h2": {
+        fontSize: "45px"
+      },
+      "& q": {
+        fontSize: "32px"
+      }
     }
   }
 }));
